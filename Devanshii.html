@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Average Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7ff;
+            margin: 40px;
+        }
+        h2 {
+            color: #004080;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 400px;
+        }
+        label, select, input {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 1em;
+        }
+        button {
+            background-color: #004080;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0059b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Marks Average Calculator</h2>
+    <form id="marksForm">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" placeholder="Enter student name" required>
+
+        <label for="subject1">Select Subject 1:</label>
+        <select id="subject1">
+            <option>Math</option>
+            <option>Science</option>
+            <option>English</option>
+            <option>History</option>
+            <option>Computer</option>
+        </select>
+        <input type="number" id="marks1" placeholder="Enter marks for subject 1" min="0" max="100" required>
+
+        <label for="subject2">Select Subject 2:</label>
+        <select id="subject2">
+            <option>Math</option>
+            <option>Science</option>
+            <option>English</option>
+            <option>History</option>
+            <option>Computer</option>
+        </select>
+        <input type="number" id="marks2" placeholder="Enter marks for subject 2" min="0" max="100" required>
+
+        <label for="subject3">Select Subject 3:</label>
+        <select id="subject3">
+            <option>Math</option>
+            <option>Science</option>
+            <option>English</option>
+            <option>History</option>
+            <option>Computer</option>
+        </select>
+        <input type="number" id="marks3" placeholder="Enter marks for subject 3" min="0" max="100" required>
+
+        <button type="button" onclick="calculateAverage()">Calculate Average</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateAverage() {
+            let name = document.getElementById("studentName").value;
+            let m1 = parseFloat(document.getElementById("marks1").value);
+            let m2 = parseFloat(document.getElementById("marks2").value);
+            let m3 = parseFloat(document.getElementById("marks3").value);
+
+            if (isNaN(m1) || isNaN(m2) || isNaN(m3)) {
+                document.getElementById("result").innerHTML = "⚠️ Please enter valid marks for all subjects.";
+                return;
+            }
+
+            let average = (m1 + m2 + m3) / 3;
+
+            document.getElementById("result").innerHTML =
+                `Student <strong>${name}</strong> has an average mark of <strong>${average.toFixed(2)}</strong>.`;
+        }
+    </script>
+</body>
+</html>
