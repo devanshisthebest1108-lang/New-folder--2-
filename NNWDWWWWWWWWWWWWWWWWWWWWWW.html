@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object and Array Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        h2 {
+            color: darkblue;
+        }
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Object and Array Example</h2>
+
+    <div id="output"></div>
+
+    <script>
+        // Creating an object
+        let student = {
+            name: "Devansh",
+            age: 20,
+            course: "Computer Science",
+            city: "Delhi"
+        };
+
+        // Creating an array
+        let subjects = ["Math", "Physics", "Chemistry", "Computer"];
+
+        let output = document.getElementById("output");
+
+        // Display object values using keys
+        output.innerHTML += "<h3>Object Data (Using Keys)</h3>";
+        output.innerHTML += "<p>Name: " + student.name + "</p>";
+        output.innerHTML += "<p>Age: " + student.age + "</p>";
+        output.innerHTML += "<p>Course: " + student.course + "</p>";
+        output.innerHTML += "<p>City: " + student.city + "</p>";
+
+        // Display array values using index
+        output.innerHTML +=
